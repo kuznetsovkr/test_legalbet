@@ -1,0 +1,21 @@
+@import './fonts';
+@import './card';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&family=Wix+Madefor+Text:ital,wght@0,600;1,600&display=swap');
+
+*{
+  margin: 0;
+  font-family: 'Proximanova', sans-serif;
+}
+.container {
+  max-width: 720px;
+  min-width: 319px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 12px;
+  }
+}

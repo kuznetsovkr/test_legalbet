@@ -1,0 +1,277 @@
+.forecast-card {
+  max-width: 768px;
+  min-width: 351px;
+  margin: 0 10px;
+  padding: 24px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: all 0.3s ease;
+
+  &__header {
+    display: flex;
+    height: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+
+    &--avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    &--info{
+      margin: 0 75px 0 12px;
+      max-width: 233px;
+      &-name{
+        font-family: 'Proximanova', sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 114%;
+        color: rgba(0, 0, 0, 0.8);
+        width: 100%;
+      }
+      &-stats{
+        font-family: 'Proximanova', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: rgba(0, 0, 0, 0.4);
+        width: 100%;
+      }
+    }
+
+    &--stat{
+      display: flex;
+      flex-direction: row;
+      font-family: 'Proximanova', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 114%;
+      > div {
+        width: 64px;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .divider {
+          width: 100%;
+          height: 1px;
+          background-color: rgba(0, 0, 0, 0.1);
+        }
+      }
+      gap:12px;
+      &-plus{
+        color: #62b435;
+      }
+      &-equally{
+        color: rgba(0, 0, 0, 0.4);
+      }
+      &-minus{
+        color: #f64747;
+      }
+      &-roi,
+      &-profit{
+        color: #62b435;
+        &-firstRow{
+          font-family: 'Proximanova', sans-serif;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 117%;
+          color: rgba(0, 0, 0, 0.8);
+        }
+      }
+      
+    }
+    &--mobile-summary{
+      display: none;
+    }
+  }
+
+  &__content{
+    margin-top: 20px;
+    p{
+      font-family: 'Proximanova', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &__footer{
+    background: rgba(240, 241, 242, 0.4);
+    border-left: 2px solid #3498db;
+    min-height: 42px;
+    padding: 24px 0;
+    margin-top: 24px;
+    &-inner {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; 
+    }
+    &--bet{
+      font-family: 'Proximanova', sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 423px;
+      &-type{
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 117%;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.4);
+      }
+      &-name{
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 111%;
+        color: rgba(0, 0, 0, 0.8);
+      }
+
+    }
+    &--bk{
+      height: 32px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap:12px;
+      margin-right: 16px;
+      img{
+        width: 32px;
+        height: 32px;
+      }
+      &-text{
+        &-kf{
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 117%;
+          color: #333;
+          font-family: 'Proximanova', sans-serif;
+        }
+        &-number{
+          font-family: 'FuturaPT', sans-serif;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 120%;
+          color: rgba(0, 0, 0, 0.8);
+        }
+      }
+
+    }
+    &--btn{
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 114%;
+      text-align: center;
+      color: #fff;
+      font-family: 'Wix Madefor Text', sans-serif;
+      background: #3498db;
+      border-radius: 4px;
+      width: 140px;
+      height: 40px;
+      border: none;
+    }
+    &--btn:hover{
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 744px) {
+  .forecast-card{
+    &__header {
+      gap: 8px;
+      position: relative;
+  
+      &--info {
+        font-family: 'Proximanova', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 114%;
+        color: rgba(0, 0, 0, 0.2);
+        .plus {
+          color: #62b435;
+        }
+
+        .equally {
+          color: #a1aab2;
+        }
+
+        .minus {
+          color: #f64747;
+        }
+
+        .roi {
+          color: rgba(0, 0, 0, 0.8);
+        }
+
+        margin: 0;
+  
+        &-stats {
+          display: none;
+        }
+      }
+  
+      &--stat {
+        display: none;
+      }
+      &--mobile-summary {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-left: auto;
+  
+        &-days {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 114%;
+          color: rgba(0, 0, 0, 0.4);
+        }
+  
+        &-profit {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 114%;
+          color: #62b435;
+  
+          &.plus {
+            color: #62b435;
+          }
+  
+          &.minus {
+            color: #f64747;
+          }
+        }
+      }
+    }
+
+    &-inner {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    &__footer{
+      &--bet {
+        flex: 1 1 0;
+        min-width: 0; 
+      }
+      &--bk {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
+      &--btn {
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 16px;
+      }
+    }
+  }
+}
+
