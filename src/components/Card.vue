@@ -5,14 +5,18 @@
                 <div class="forecast-card__header">
                     <img src="/src/assets/images/face.png" alt="Author" class="forecast-card__header--avatar" />
                     <div class="forecast-card__header--info">
-                        <p class="forecast-card__header--info-name">{{ forecastData.author }}</p>
+                      <p class="forecast-card__header--info-name">{{ forecastData.author }}</p>
 
-                        <div class="forecast-card__header--info-mobile-stats">
-                            <span class="plus">{{ forecastData.plus }}</span> /
-                            <span class="equally">{{ forecastData.equally }}</span> /
-                            <span class="minus">{{ forecastData.minus }}</span> /
-                            <span class="roi">ROI {{ forecastData.roi }}%</span>
-                        </div>
+                      <p class="forecast-card__header--info-stats">
+                        Статистика за последние 30 дней
+                      </p>
+
+                      <div class="forecast-card__header--info-mobile-stats">
+                        <span class="plus">{{ forecastData.plus }}</span> /
+                        <span class="equally">{{ forecastData.equally }}</span> /
+                        <span class="minus">{{ forecastData.minus }}</span> /
+                        <span class="roi">ROI {{ forecastData.roi }}%</span>
+                      </div>
                     </div>
 
                     <div class="forecast-card__header--mobile-summary">
@@ -142,66 +146,66 @@
 </script>
 
 <style scoped lang="scss">
-.forecast-card__content {
-  position: relative;
-  transition: max-height 0.5s ease;
-  p {
-    line-height: 1.5em;
-    font-size: 16px;
-    color: rgba(0, 0, 0, 0.6);
+  .forecast-card__content {
+    position: relative;
+    transition: max-height 0.5s ease;
+    p {
+      line-height: 1.5em;
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    .content-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3em;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+      pointer-events: none;
+    }
   }
 
-  .content-fade {
+
+  .forecast-card__footer {
+    background: rgba(240, 241, 242, 0.4);
+    border-left: 2px solid #3498db;
+    padding: 24px 0;
+    position: relative;
+    z-index: 1;
+  }
+  .toggle-button-wrapper {
+    position: relative;
+    height: 0;
+    z-index: 3;
+  }
+
+  .toggle-button {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3em;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
-    pointer-events: none;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.08);
+    transition: background 0.3s ease;
+
+    img {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    img.rotated {
+      transform: rotate(180deg);
+    }
   }
-}
-
-
-.forecast-card__footer {
-  background: rgba(240, 241, 242, 0.4);
-  border-left: 2px solid #3498db;
-  padding: 24px 0;
-  position: relative;
-  z-index: 1;
-}
-.toggle-button-wrapper {
-  position: relative;
-  height: 0;
-  z-index: 3;
-}
-
-.toggle-button {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #fff;
-  border: none;
-  border-radius: 20px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  z-index: 3;
-  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.08);
-  transition: background 0.3s ease;
-
-  img {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.3s ease;
-  }
-
-  img.rotated {
-    transform: rotate(180deg);
-  }
-}
 
 </style>

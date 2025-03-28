@@ -1,0 +1,18 @@
+@mixin font-regular($size, $line-height) {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: $size;
+    line-height: $line-height;
+  }
+  
+  @mixin font-bold($size, $line-height) {
+    font-family: $font-main;
+    font-weight: 600;
+    font-size: $size;
+    line-height: $line-height;
+  }
+  
+  @mixin transition-all {
+    transition: all 0.3s ease;
+  }
+  
